@@ -43,7 +43,7 @@ npm run dev
 
 Aplikasi akan tersedia di:
 
-https://localhost:5173
+https://localhost:3000 atau https://localhost:3001 
 
 
 ⚠️ WebAuthn memerlukan koneksi HTTPS,
