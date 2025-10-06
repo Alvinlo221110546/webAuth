@@ -1,42 +1,50 @@
-## webauthn-demo
+🔐 WebAuthn Demo — Autentikasi Biometrik (PIN)
 
-WebAuthn demo with biometric authentication (Face ID / fingerprint)
+Proyek ini adalah demo sederhana WebAuthn yang menggunakan autentikasi biometrik seperti PIN.
+Cocok digunakan sebagai contoh penerapan login tanpa password, atau sebagai pengganti TOTP / 2FA / MFA.
 
-WebAuthn documentation:
+📘 Tentang WebAuthn
 
-https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create
+WebAuthn (Web Authentication API) memungkinkan pengguna untuk login dengan aman menggunakan perangkat mereka —
+seperti fingerprint sensor, Face ID, atau kunci keamanan (security key) — tanpa perlu password tradisional.
 
-https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get
+Dokumentasi resmi:
 
-Assertion check is not featured in this project, current example can be used as a replacement for TOTP or other 2FA / MFA solutions
+MDN - navigator.credentials.create()
 
-### Deploy
+MDN - navigator.credentials.get()
 
-```shell script
+⚠️ Contoh ini belum mencakup tahap verifikasi (assertion check) di server,
+namun sudah dapat berfungsi sebagai sistem otentikasi dasar (mis. pengganti OTP atau MFA).
+
+🧩 Persiapan Proyek
+
+Clone repositori:
+
 git clone https://github.com/peterdee/webauthn-demo
 cd ./webauthn-demo
+
+
+Gunakan Node.js versi 22:
+
 nvm use 22
+
+
+Instal dependensi:
+
 npm ci
-```
 
-### Launch
+🚀 Jalankan Aplikasi Secara Lokal
 
-For local testing just launch the application:
+Untuk menjalankan aplikasi di mode pengembangan:
 
-```shell script
 npm run dev
-```
 
-WebAuthn requires HTTPS, so the app will be available at https://localhost:5173
 
-Testing on another device is possible with [Ngrok](https://ngrok.com):
+Aplikasi akan tersedia di:
 
-```shell script
-ngrok http https://localhost:5173
-```
+https://localhost:5173
 
-**WebAuthn forbids using IP addresses as domains, so it won't work if you access the app from your local network via IP address!**
 
-### License
-
-[MIT](./LICENSE.md)
+⚠️ WebAuthn memerlukan koneksi HTTPS,
+jadi pastikan kamu mengakses menggunakan https://localhost, bukan alamat IP langsung.
